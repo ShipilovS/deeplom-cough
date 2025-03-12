@@ -15,8 +15,11 @@
 
 sudo chmod -R 777 main.py
 
-import sounddevice as sd
+sudo apt-get install python-tk
+sudo apt-get install python3.7-tk
 
+import sounddevice as sd
+python3 -m pip install numpy --upgrade --use-deprecated=legacy-resolver
 print(sd.query_hostapis())
 print(sd.query_devices())
 
@@ -80,3 +83,6 @@ model.fit(X_train, y_train, epochs=500, batch_size=32, validation_split=0.2, cal
 
 model.save('cough_detection_model-37.h5')
 print("Модель сохранена в 'cough_detection_model.h5'")
+
+
+Запускать - train37.py

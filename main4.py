@@ -1,3 +1,5 @@
+# python3 -m pip install numpy
+# python3 main4.py
 import tkinter as tk
 import sounddevice as sd
 import numpy as np
@@ -5,6 +7,10 @@ import wave
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import threading
+import librosa
+from tensorflow.keras.models import load_model
+# Загрузите вашу модель
+# model = load_model('cough_detection_model-37.h5')
 from scipy.io.wavfile import write
 
 class AudioRecorder:
