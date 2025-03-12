@@ -84,5 +84,4 @@ model.fit(X_train, y_train, epochs=500, batch_size=32, validation_split=0.2, cal
 model.save('cough_detection_model-37.h5')
 print("Модель сохранена в 'cough_detection_model.h5'")
 
-
 Запускать - train37.py

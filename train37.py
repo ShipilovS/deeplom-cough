@@ -14,10 +14,10 @@ import tensorflow as tf
 
 LABELS = ['VGMU_Coswata_Cutt', 'VGMU_Noise', 'VGMU_Voises_Cutt']
 # Параметры
-# data_dir = '/home/sshipilov/Загрузки/Telegram Desktop/data_deeplom'
+data_dir = '/home/sshipilov/Загрузки/Telegram Desktop/data_deeplom'
 # data_dir = '/home/sshipilov/Загрузки/Telegram Desktop/VGMU_Noise' 
 # data_dir = '/home/sshipilov/Загрузки/Telegram Desktop/VGMU_Voises_Cutt'
-data_dir = '/home/sshipilov/python_projects/cough_real_time'
+# data_dir = '/home/sshipilov/python_projects/cough_real_time'
 sample_rate = 44100
 n_mfcc = 13
 num_classes = 3
