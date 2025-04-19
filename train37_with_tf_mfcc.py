@@ -11,8 +11,8 @@ LABELS = ['VGMU_Coswata_Cutt', 'VGMU_Noise', 'VGMU_Voises_Cutt']
 data_dir = '/home/sshipilov/Загрузки/Telegram Desktop/data_deeplom'
 data_dir = '/home/sshipilov/python_projects/cough_real_time'
 
-sample_rate = 44100
-n_mfcc = 13
+sample_rate = 44100 # 22050
+n_mfcc = 25 # 20, 30, 45
 num_classes = 3
 frame_length = 1024
 frame_step = 512
