@@ -16,7 +16,7 @@ n_mfcc = 25 # 20, 30, 45
 num_classes = 3
 frame_length = 1024
 frame_step = 512
-num_mel_bins = 40
+num_mel_bins = 128
 lower_edge_hertz = 0.0
 upper_edge_hertz = 8000.0
 
@@ -118,8 +118,8 @@ checkpoint = ModelCheckpoint('cough_detection_model_tfmfcc.h5',
 model.fit(X_train, y_train, epochs=500, batch_size=32, 
          validation_split=0.2, callbacks=[checkpoint])
 
-model.save('cough_detection_model_tfmfcc.h5')
-print("Модель сохранена в 'cough_detection_model_tfmfcc.h5'")
+model.save('cough_detection_model_tfmfcc_30.h5')
+print("Модель сохранена в 'cough_detection_model_tfmfcc_325_128.h5'")
 
 
 # 223/223 [==============================] - ETA: 0s - loss: 0.4394 - accuracy: 0.8693

@@ -52,3 +52,58 @@ Epoch 500/500
 Epoch 500: val_accuracy did not improve from 0.92256
 223/223 [==============================] - 2s 9ms/step - loss: 0.4412 - accuracy: 0.8947 - val_loss: 0.3977 - val_accuracy: 0.9141
 Модель сохранена в 'cough_detection_model_tfmfcc.h5'
+
+
+
+
+
+sample_rate = 44100 # 22050
+n_mfcc = 40
+num_classes = 3
+frame_length = 1024
+frame_step = 512
+num_mel_bins = 40
+lower_edge_hertz = 0.0
+upper_edge_hertz = 8000.0
+==>
+
+219/223 [============================>.] - ETA: 0s - loss: 0.4536 - accuracy: 0.9098
+Epoch 497: val_accuracy did not improve from 0.94108
+223/223 [==============================] - 2s 10ms/step - loss: 0.4522 - accuracy: 0.9102 - val_loss: 0.3878 - val_accuracy: 0.9332
+Epoch 498/500
+219/223 [============================>.] - ETA: 0s - loss: 0.4409 - accuracy: 0.9098
+Epoch 498: val_accuracy did not improve from 0.94108
+223/223 [==============================] - 2s 10ms/step - loss: 0.4401 - accuracy: 0.9103 - val_loss: 0.3784 - val_accuracy: 0.9315
+Epoch 499/500
+221/223 [============================>.] - ETA: 0s - loss: 0.4583 - accuracy: 0.9053
+Epoch 499: val_accuracy did not improve from 0.94108
+223/223 [==============================] - 2s 10ms/step - loss: 0.4575 - accuracy: 0.9058 - val_loss: 0.4095 - val_accuracy: 0.9338
+Epoch 500/500
+220/223 [============================>.] - ETA: 0s - loss: 0.4480 - accuracy: 0.9115
+Epoch 500: val_accuracy did not improve from 0.94108
+223/223 [==============================] - 2s 10ms/step - loss: 0.4476 - accuracy: 0.9117 - val_loss: 0.3849 - val_accuracy: 0.9343
+
+
+
+sample_rate = 44100 # 22050
+n_mfcc = 30
+num_classes = 3
+frame_length = 1024
+frame_step = 512
+num_mel_bins = 128
+lower_edge_hertz = 0.0
+upper_edge_hertz = 8000.0
+==>
+223/223 [==============================] - 2s 11ms/step - loss: 0.3769 - accuracy: 0.9207 - val_loss: 0.3229 - val_accuracy: 0.9422
+Epoch 498/500
+223/223 [==============================] - ETA: 0s - loss: 0.3713 - accuracy: 0.9176
+Epoch 498: val_accuracy did not improve from 0.94725
+223/223 [==============================] - 2s 11ms/step - loss: 0.3713 - accuracy: 0.9176 - val_loss: 0.3310 - val_accuracy: 0.9355
+Epoch 499/500
+223/223 [==============================] - ETA: 0s - loss: 0.3899 - accuracy: 0.9168
+Epoch 499: val_accuracy did not improve from 0.94725
+223/223 [==============================] - 2s 10ms/step - loss: 0.3899 - accuracy: 0.9168 - val_loss: 0.3214 - val_accuracy: 0.9444
+Epoch 500/500
+219/223 [============================>.] - ETA: 0s - loss: 0.3885 - accuracy: 0.9180
+Epoch 500: val_accuracy did not improve from 0.94725
+223/223 [==============================] - 2s 10ms/step - loss: 0.3894 - accuracy: 0.9173 - val_loss: 0.3229 - val_accuracy: 0.9377
