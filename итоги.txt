@@ -107,3 +107,54 @@ Epoch 500/500
 219/223 [============================>.] - ETA: 0s - loss: 0.3885 - accuracy: 0.9180
 Epoch 500: val_accuracy did not improve from 0.94725
 223/223 [==============================] - 2s 10ms/step - loss: 0.3894 - accuracy: 0.9173 - val_loss: 0.3229 - val_accuracy: 0.9377
+
+
+
+sample_rate = 44100 # 22050
+n_mfcc = 30 # 20, 30, 45
+num_classes = 3
+frame_length = 1024
+frame_step = 512
+num_mel_bins = 40
+lower_edge_hertz = 0.0
+upper_edge_hertz = 8000.0
+
+
+223/223 [==============================] - 2s 11ms/step - loss: 0.4444 - accuracy: 0.9015 - val_loss: 0.3877 - val_accuracy: 0.9276
+Epoch 498/500
+222/223 [============================>.] - ETA: 0s - loss: 0.4383 - accuracy: 0.9040
+Epoch 498: val_accuracy did not improve from 0.93266
+223/223 [==============================] - 2s 10ms/step - loss: 0.4385 - accuracy: 0.9040 - val_loss: 0.4090 - val_accuracy: 0.9125
+Epoch 499/500
+223/223 [==============================] - ETA: 0s - loss: 0.4454 - accuracy: 0.9008
+Epoch 499: val_accuracy did not improve from 0.93266
+223/223 [==============================] - 2s 11ms/step - loss: 0.4454 - accuracy: 0.9008 - val_loss: 0.3937 - val_accuracy: 0.9254
+Epoch 500/500
+219/223 [============================>.] - ETA: 0s - loss: 0.4515 - accuracy: 0.9023
+Epoch 500: val_accuracy did not improve from 0.93266
+223/223 [==============================] - 2s 11ms/step - loss: 0.4504 - accuracy: 0.9032 - val_loss: 0.3852 - val_accuracy: 0.9248
+
+
+
+# Форма предсказания: (1, 1) - [[0.99556446]]
+# Файл: /home/sshipilov/deeplom_data/Noize_voise/3905149400db1-3ca3-472d-b4ba-aef8261d7712.wav
+# ну тут шум просто фраза - это тоже надо
+# Предсказанный класс: Кашель
+# Вероятность кашля: 0.9956
+# Истинный класс: Нет кашля
+# ------------------------------
+
+# 1/1 [==============================] - 0s 21ms/step
+# Форма предсказания: (1, 1) - [[0.00017914]]
+# Файл: /home/sshipilov/deeplom_data/Cough/2ef9e67b3-9147-494f-a855-17f2326a61f3.wav
+# Предсказанный класс: Нет кашля
+# Вероятность кашля: 0.0002
+# Истинный класс: Кашель
+
+
+# 1/1 [==============================] - 0s 33ms/step
+# Форма предсказания: (1, 1) - [[0.7534054]]
+# Файл: /home/sshipilov/deeplom_data/Noize_voise/6295979ab25cd-4ab5-4c86-a5aa-eaf95d768374.wav
+# Предсказанный класс: Кашель
+# Вероятность кашля: 0.7534
+# Истинный класс: Нет кашля

@@ -56,12 +56,14 @@ tensorboard==2.10.1
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow==2.10.1
+tensorflow-addons==0.19.0
 tensorflow-estimator==2.10.0
 tensorflow-gpu==2.10.1
 tensorflow-io-gcs-filesystem==0.34.0
 termcolor==1.1.0
 threadpoolctl==3.1.0
 tk==0.1.0
+typeguard==4.1.2
 typing_extensions==4.7.1
 urllib3==2.0.7
 Werkzeug==2.2.3
