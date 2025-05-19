@@ -8,7 +8,7 @@ COUGH_DIR = "/home/sshipilov/deeplom_data/Cough"
 NO_COUGH_DIR = "/home/sshipilov/deeplom_data/Noize_voise"
 SAMPLE_RATE = 44100
 N_MFCC = 25
-MODEL_NAME = 'cough_detection_model_tfmfcc_new_model.h5'
+MODEL_NAME = 'cough_detection_model_tfmfcc_new_model_2.h5'
 
 # Функция для загрузки и обработки аудио файла
 def load_and_process_audio(file_path):
@@ -33,8 +33,8 @@ def load_and_process_audio(file_path):
     mfccs_mean = tf.reduce_mean(mfccs, axis=0)
 
     # Изменение формы MFCC для соответствия (1, 1, N_MFCC, 1)
-    # return mfccs_mean.numpy().reshape(1, 1, N_MFCC, 1)
-    return mfccs_mean.numpy().reshape(1, N_MFCC)  # Изменяем здесь
+    return mfccs_mean.numpy().reshape(1, 1, N_MFCC, 1)
+    # return mfccs_mean.numpy().reshape(1, N_MFCC)  # Изменяем здесь
 
 
 def evaluate_model_on_random_files(model, threshold=0.5):
