@@ -80,12 +80,24 @@ def process_files(files, labels):
             print(f"Ошибка обработки файла {file_path}: {str(e)}")
             continue
     
-    return np.array(mfcc_features), np.array(processed_labels)
+    X = np.array(mfcc_features)
+    y = np.array(processed_labels)
+    
+    # Преобразование формы для Conv2D
+    X = X.reshape(X.shape[0], N_MFCC, 1)  # Форма: (n_samples, N_MFCC, 1)
+
+    return X, y
+
 
 def create_model():
-    """Создание модели для классификации."""
+    """Создание модели для классификации с использованием свёрточных слоев."""
     model = models.Sequential([
-        layers.Input(shape=(N_MFCC,)),
+        layers.Input(shape=(N_MFCC, 1)),  # Изменена форма входа
+        layers.Conv2D(32, (3, 1), activation='relu', padding='same'),
+        layers.MaxPooling2D(pool_size=(2, 1)),
+        layers.Conv2D(64, (3, 1), activation='relu', padding='same'),
+        layers.MaxPooling2D(pool_size=(2, 1)),
+        layers.Flatten(),
         layers.Dense(128, activation='relu', kernel_regularizer=regularizers.l2(0.01)),
         layers.BatchNormalization(),
         layers.Dropout(0.5),
@@ -117,7 +129,7 @@ def train_model():
         ModelCheckpoint(MODEL_NAME, save_best_only=True, monitor='val_accuracy'),
         EarlyStopping(patience=5, restore_best_weights=True, monitor='val_loss')
     ]
-    
+    i = 1
     # Обрабатываем данные порциями
     for chunk_num, (files, labels) in enumerate(get_file_chunks()):
         print(f"\nОбработка порции {chunk_num + 1} ({len(files)} файлов)")
@@ -138,11 +150,14 @@ def train_model():
             epochs=500,
             batch_size=BATCH_SIZE,
             callbacks=callbacks,
-            verbose=1
+            verbose=1,
+            workers=16,
+            use_multiprocessing=True
         )
         
         # Сохраняем модель после каждой порции
-        model.save(MODEL_NAME)
+        model.save(f'cough_detection_model_tfmfcc_new_model_{i}.h5')
+        i += 1
         print(f"Точность на валидации: {history.history['val_accuracy'][-1]:.4f}")
 
 # Запуск обучения
